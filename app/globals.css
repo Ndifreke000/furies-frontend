@@ -2,20 +2,152 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 222 30% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 30% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 30% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 184 100% 50%;
+    --primary-foreground: 222 30% 7%;
+
+    --secondary: 184 100% 39%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 164 100% 50%;
+    --accent-foreground: 222 30% 7%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 184 100% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 30% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 30% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 30% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 184 100% 50%;
+    --primary-foreground: 222 30% 7%;
+
+    --secondary: 184 100% 39%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 164 100% 50%;
+    --accent-foreground: 222 30% 7%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 184 100% 50%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-cetus-darker text-foreground;
+    background-image: radial-gradient(circle at 50% 30%, rgba(0, 228, 255, 0.15) 0%, rgba(0, 0, 0, 0) 50%);
+    background-size: 100% 100%;
+    background-position: 0 0;
+    background-attachment: fixed;
+  }
 }
+
+@layer components {
+  .cetus-card {
+    @apply relative overflow-hidden rounded-xl border border-cetus-border bg-cetus-card p-6 backdrop-blur-sm;
+    box-shadow: 0 0 20px rgba(0, 228, 255, 0.05);
+  }
+
+  .cetus-card::before {
+    content: "";
+    @apply absolute inset-0 rounded-xl opacity-20;
+    background: linear-gradient(120deg, transparent 20%, rgba(0, 228, 255, 0.3), transparent 80%);
+    background-size: 200% 200%;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .cetus-input {
+    @apply bg-cetus-dark border-cetus-border rounded-lg p-4 text-foreground w-full focus:border-cetus-primary focus:ring-1 focus:ring-cetus-primary;
+  }
+
+  .cetus-button {
+    @apply bg-gradient-to-r from-cetus-primary to-cetus-accent text-cetus-darker font-medium rounded-lg px-4 py-2 hover:opacity-90 transition-opacity;
+  }
+
+  .cetus-tab {
+    @apply px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:text-cetus-primary transition-colors;
+  }
+
+  .cetus-tab-active {
+    @apply border-cetus-primary text-cetus-primary;
+  }
+
+  .glow-border {
+    @apply relative rounded-xl;
+  }
+
+  .glow-border::before {
+    content: "";
+    @apply absolute -inset-0.5 rounded-xl opacity-75 blur-sm;
+    background: linear-gradient(45deg, #00e4ff, #00ffbb);
+    background-size: 200% 200%;
+    animation: gradientBG 10s ease infinite;
+  }
+
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -100% 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+
+  .glass-panel {
+    @apply rounded-xl border border-cetus-border bg-cetus-dark/50 backdrop-blur-lg;
+  }
+
+  .cetus-text {
+    text-shadow: 0 0 5px rgba(0, 228, 255, 0.8), 0 0 10px rgba(0, 228, 255, 0.5);
+  }
+}
+

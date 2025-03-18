@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button"
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-cetus-border bg-cetus-darker/95 backdrop-blur supports-[backdrop-filter]:bg-cetus-darker/60">
-      <div className="container flex h-16 max-w-screen-2xl items-center">
+    <header className="sticky top-0 z-50 w-full">
+      <div className="container flex h-20 max-w-screen-[1200px] items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <div className="relative h-8 w-8">
             <div className="absolute inset-0 rounded-full bg-cetus-primary/20 animate-pulse"></div>

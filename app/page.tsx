@@ -9,14 +9,14 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-[1200px] px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
+              <div className="flex flex-col justify-center space-y-8">
+                <div className="space-y-4">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-gradient-to-r from-cetus-primary via-cetus-accent to-cetus-primary bg-clip-text text-transparent">
                     Decentralized P2P Exchange on Sui
                   </h1>
-                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                  <p className="max-w-[600px] text-muted-foreground md:text-xl italic">
                     Exchange cryptocurrencies for fiat securely with AI-powered dispute resolution and earn NFT rewards
                     while learning about Web3.
                   </p>
@@ -45,7 +45,7 @@ export default function Home() {
                     <div className="absolute -top-6 -left-6 h-12 w-12 rounded-full bg-cetus-primary/20 animate-pulse"></div>
                     <div className="absolute -bottom-6 -right-6 h-12 w-12 rounded-full bg-cetus-accent/20 animate-pulse"></div>
                     <img
-                      src="/placeholder.svg?height=400&width=400"
+                      src="/assets/images/p2p_illustration.png"
                       alt="P2P Exchange Illustration"
                       className="rounded-lg object-cover"
                       width={400}

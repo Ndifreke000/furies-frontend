@@ -1,8 +1,12 @@
+'use client';
+
 import Link from "next/link"
 import { MainNav } from "@/components/main-nav"
 import { ConnectWalletButton } from "@/components/connect-wallet-button"
-import { Bell, Settings } from "lucide-react"
+import { Bell, Settings, Wallet } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ConnectButton } from "@suiet/wallet-kit";
+
 
 export function SiteHeader() {
   return (
@@ -21,7 +25,9 @@ export function SiteHeader() {
             <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
               <Bell className="h-5 w-5" />
             </Button>
-            <ConnectWalletButton />
+            <ConnectButton>
+              <span className="flex flex-row items-center justify-center"><Wallet className="mr-2 h-4 w-4 text-black" /> Connect Wallet</span>
+            </ConnectButton>
           </nav>
         </div>
       </div>

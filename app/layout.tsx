@@ -1,8 +1,9 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Josefin_Sans as FontSans } from "next/font/google"
-import "./globals.css"
 import { cn } from "@/lib/utils"
+import "./globals.css"
+import WalletProviderWrapper from "@/components/WalletProvider"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background dark", fontSans.className)}>
-        {children}
+        <WalletProviderWrapper>
+          {children}
+        </WalletProviderWrapper>
       </body>
     </html>
   )

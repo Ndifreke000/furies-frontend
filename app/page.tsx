@@ -21,9 +21,9 @@ export default function Home() {
                     while learning about Web3.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <div className="flex flex-row gap-2">
                   <Link href="/swap">
-                    <Button className="bg-gradient-to-r from-cetus-primary to-cetus-accent text-cetus-darker hover:opacity-90 rounded-lg">
+                    <Button className="bg-gradient-to-r from-cetus-primary to-cetus-accent text-cetus-darker hover:opacity-90">
                       Start Swapping
                       <ArrowDownUp className="ml-2 h-4 w-4" />
                     </Button>
